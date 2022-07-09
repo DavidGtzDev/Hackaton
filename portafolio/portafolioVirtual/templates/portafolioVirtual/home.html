@@ -20,35 +20,27 @@
 </head>
 <body>
 <!--header-->
-<div style="background-color: #aaaaaa; height: 100px"></div>
+<div style="height: 100px; overflow: hidden;"><img style="display: block ;height: 100px; margin-left: auto; margin-right: auto" src="{% static 'logo.PNG' %}"></div>
 <div class="row" style = "margin-right: 5%; margin-left: 5%; margin-top: 10px; margin-bottom: 20px; background-color: #e4e4e4; border-radius: 5%; ;">
 	<div class="titulos col-3" onclick="change_titulo(this)" style="text-align: center; padding:20px; "><h5>Mi posicion</h5> </div>
-	<div class="titulos col-3" onclick="change_titulo(this)" style="text-align: center; padding:20px"><h4>Mint</h4> </div>
-	<div class="titulos col-3" onclick="change_titulo(this)" style="text-align: center; padding:20px"><h4>Buy</h4> </div>
+	<div class="titulos col-3" onclick="change_titulo(this)" style="text-align: center; padding:20px"><h4>Mint/Burn</h4> </div>
+	<div class="titulos col-3" onclick="change_titulo(this)" style="text-align: center; padding:20px"><h4>Buy/Sell</h4> </div>
 	<div class="titulos col-3" onclick="change_titulo(this)" style="text-align: center; padding:20px"><h4>Opciones</h4> </div>
 	
 
 </div>
 
 <div class="row" data-titulo = "Mi posicion" style="margin-right: 5%; margin-left: 5%;">
-	<div class="col-5" style="background-color: #e4e4e4"></div>
+	<div class="col-5" style="background-color: #e4e4e4"><img style = "width: 75%; margin-left: auto; margin-right: auto; display: block; margin-top: 30px" src="{% static 'Grafica.PNG' %}"></div>
 	<div class="col-1"></div>
-	<div class="col-6" style="background-color: #e4e4e4; padding:15px">
+	<div class="col-6" id = "monitor" style="background-color: #e4e4e4; padding:15px">
 		<div class="row" style="padding: 10px;">
 			<div class="col-2"> <b> Nombre</b>  </div>
-			<div class="col-2"> <b>Cierre </b></div>
-			<div class="col-2"><b>Apertura</b> </div>
-			<div class="col-2"><b>Máximo </b></div>
-			<div class="col-2"><b>Mínimo </b></div>
-			<div class="col-2"><b>Variacion </b></div>
-		</div>
-		<div class="titulos row" onclick = "open_my_modal(this);" style="padding: 10px; font-size: 90%;">
-			<div class="col-2">  Apple  </div>
-			<div class="col-2"> 10.4 </div>
-			<div class="col-2">23 </div>
-			<div class="col-2">10 </div>
-			<div class="col-2">5 </div>
-			<div class="col-2">4 </div>
+			<div class="col-2"> <b>Cantidad </b></div>
+			<div class="col-2"><b>Valor inicial</b> </div>
+			<div class="col-2"><b>Cierre</b></div>
+			<div class="col-2"><b>Total</b></div>
+			<div class="col-2"><b>Var </b></div>
 		</div>
 
 </div></div>
@@ -57,7 +49,7 @@
 
 <!---mint--->
 
-<div class="row" data-titulo = "Mint" style="margin-right: 5%; margin-left: 5%; display: none;">
+<div class="row" data-titulo = "Mint/Burn" style="margin-right: 5%; margin-left: 5%; display: none;">
 	<div class="col-12" style="background-color: #e4e4e4; padding:15px">
 		<div class="row" style="padding: 10px;">
 			<div class="col-2"> <b> Nombre</b>  </div>
@@ -80,7 +72,7 @@
 
 
 <!--Buy-->
-<div class="row" data-titulo = "Buy" style="margin-right: 5%; margin-left: 5%; display: none;">
+<div class="row" data-titulo = "Buy/Sell" style="margin-right: 5%; margin-left: 5%; display: none;">
 	<div class="col-12" style="background-color: #e4e4e4; padding:15px">
 		<div class="row" style="padding: 10px;">
 			<div class="col-2"> <b> Nombre</b>  </div>
@@ -91,7 +83,39 @@
 			<div class="col-2"><b>Variacion </b></div>
 		</div>
 		<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
-			<div class="col-2">  Apple  </div>
+			<div class="col-2"> Apple</div>
+			<div class="col-2"> 10.4 </div>
+			<div class="col-2">23 </div>
+			<div class="col-2">10 </div>
+			<div class="col-2">5 </div>
+			<div class="col-2">4 </div>
+		</div>
+		<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
+			<div class="col-2"> Tesla</div>
+			<div class="col-2"> 10.4 </div>
+			<div class="col-2">23 </div>
+			<div class="col-2">10 </div>
+			<div class="col-2">5 </div>
+			<div class="col-2">4 </div>
+		</div>
+				<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
+			<div class="col-2"> Microsoft</div>
+			<div class="col-2"> 10.4 </div>
+			<div class="col-2">23 </div>
+			<div class="col-2">10 </div>
+			<div class="col-2">5 </div>
+			<div class="col-2">4 </div>
+		</div>
+				<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
+			<div class="col-2"> FEMSA</div>
+			<div class="col-2"> 10.4 </div>
+			<div class="col-2">23 </div>
+			<div class="col-2">10 </div>
+			<div class="col-2">5 </div>
+			<div class="col-2">4 </div>
+		</div>
+						<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
+			<div class="col-2"> FUNO</div>
 			<div class="col-2"> 10.4 </div>
 			<div class="col-2">23 </div>
 			<div class="col-2">10 </div>
@@ -99,12 +123,13 @@
 			<div class="col-2">4 </div>
 		</div>
 
+
 </div></div>
 
 <!--Opciones-->
 <div class="row" data-titulo = "Opciones" style="margin-right: 5%; margin-left: 5%; display: none;">
 
-	<div class="col-12" style="background-color: #e4e4e4; padding:15px">
+	<div class="col-12"  style="background-color: #e4e4e4; padding:15px">
 <h3>Create</h3><br>
 		<div class="row" style="padding: 10px;">
 			<div class="col-2"> <b> Nombre</b>  </div>
@@ -115,7 +140,7 @@
 			<div class="col-2"><b>Variacion </b></div>
 		</div>
 		<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
-			<div class="col-2">  Apple  </div>
+			<div class="col-2">Apple</div>
 			<div class="col-2"> 10.4 </div>
 			<div class="col-2">23 </div>
 			<div class="col-2">10 </div>
@@ -123,7 +148,7 @@
 			<div class="col-2">4 </div>
 		</div>
 				<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
-			<div class="col-2">  Tesla  </div>
+			<div class="col-2">Tesla</div>
 			<div class="col-2"> 10.4 </div>
 			<div class="col-2">23 </div>
 			<div class="col-2">10 </div>
@@ -131,7 +156,7 @@
 			<div class="col-2">4 </div>
 		</div>
 				<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
-			<div class="col-2">  Microsoft  </div>
+			<div class="col-2">Microsoft</div>
 			<div class="col-2"> 10.4 </div>
 			<div class="col-2">23 </div>
 			<div class="col-2">10 </div>
@@ -139,7 +164,7 @@
 			<div class="col-2">4 </div>
 		</div>
 				<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
-			<div class="col-2">  FEMSA  </div>
+			<div class="col-2">FEMSA</div>
 			<div class="col-2"> 10.4 </div>
 			<div class="col-2">23 </div>
 			<div class="col-2">10 </div>
@@ -147,7 +172,7 @@
 			<div class="col-2">4 </div>
 		</div>
 						<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
-			<div class="col-2">  FUNO  </div>
+			<div class="col-2">FUNO</div>
 			<div class="col-2"> 10.4 </div>
 			<div class="col-2">23 </div>
 			<div class="col-2">10 </div>
@@ -182,7 +207,6 @@
 
 			  <div class="card-body">
 			    <h5 class="card-title">Mint</h5>
-			    <form method="post">
  	
   <div class="mb-3">
   	
@@ -193,9 +217,7 @@
     <label for="Precio" class="form-label">Precio</label>
     <input  name="Precio" type="number" class="form-control" id="Precio">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  {% csrf_token %}
-</form>
+  <button onclick="change_tokens(this), false" class="btn btn-primary">Comprar</button>
 			  </div>
 			</div>
     </div>
@@ -239,6 +261,7 @@
 <script type="text/javascript">
 	var company = "";
 	var action = "Mint";
+	var tokens = [];
 
 
 	function change_title(o)
@@ -263,10 +286,27 @@
 	function open_my_modal(o)
 	{
 		company = o.children[0].innerHTML;
-		$('#myModal').modal('show');
+		$('#Modal_option').modal('show');
 		document.querySelector(".card-title").innerHTML = action + company;
-		
-		
+	}
+
+	function change_tokens(o)
+	{
+		title = o.parentElement.parentElement.querySelector(".card-title").innerHTML;
+		let data = title.split(" ");
+		var new_token = [];
+		new_token.push(data[1]);
+		data = o.parentElement.parentElement.querySelectorAll("input");
+		new_token.push(data[1].value);
+		new_token.push(data[0].value);
+		new_token.push(data[1].value);
+		new_token.push(data[1].value * data[0].value)
+		new_token.push(data[1].value / data[1].value - 1);
+		tokens.push(new_token);
+		monitor = document.querySelector("#monitor");
+		monitor.innerHTML += '<div class="titulos row" onclick = "open_my_modal(this);" style="padding: 10px; font-size: 90%;"><div class="col-2">' + new_token[0] + '</div><div class="col-2">' + new_token[1] + '</div><div class="col-2">' + new_token[2] + ' </div><div class="col-2">' + new_token[3] + '</div><div class="col-2">$' + new_token[4] + ' </div><div class="col-2">%' + new_token[5] + '</div></div>'
+
+
 	}
 </script>
 </html>
