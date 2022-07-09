@@ -1,0 +1,272 @@
+
+{% load static %}
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<script type="text/javascript" src="{{ STATIC_URL }} /static/jquery-3.6.0.min.js">
+</script> 
+<style type="text/css">
+	.titulos:hover 
+	{
+		background-color: #dddddd;
+	}
+</style>
+</head>
+<body>
+<!--header-->
+<div style="background-color: #aaaaaa; height: 100px"></div>
+<div class="row" style = "margin-right: 5%; margin-left: 5%; margin-top: 10px; margin-bottom: 20px; background-color: #e4e4e4; border-radius: 5%; ;">
+	<div class="titulos col-3" onclick="change_titulo(this)" style="text-align: center; padding:20px; "><h5>Mi posicion</h5> </div>
+	<div class="titulos col-3" onclick="change_titulo(this)" style="text-align: center; padding:20px"><h4>Mint</h4> </div>
+	<div class="titulos col-3" onclick="change_titulo(this)" style="text-align: center; padding:20px"><h4>Buy</h4> </div>
+	<div class="titulos col-3" onclick="change_titulo(this)" style="text-align: center; padding:20px"><h4>Opciones</h4> </div>
+	
+
+</div>
+
+<div class="row" data-titulo = "Mi posicion" style="margin-right: 5%; margin-left: 5%;">
+	<div class="col-5" style="background-color: #e4e4e4"></div>
+	<div class="col-1"></div>
+	<div class="col-6" style="background-color: #e4e4e4; padding:15px">
+		<div class="row" style="padding: 10px;">
+			<div class="col-2"> <b> Nombre</b>  </div>
+			<div class="col-2"> <b>Cierre </b></div>
+			<div class="col-2"><b>Apertura</b> </div>
+			<div class="col-2"><b>Máximo </b></div>
+			<div class="col-2"><b>Mínimo </b></div>
+			<div class="col-2"><b>Variacion </b></div>
+		</div>
+		<div class="titulos row" onclick = "open_my_modal(this);" style="padding: 10px; font-size: 90%;">
+			<div class="col-2">  Apple  </div>
+			<div class="col-2"> 10.4 </div>
+			<div class="col-2">23 </div>
+			<div class="col-2">10 </div>
+			<div class="col-2">5 </div>
+			<div class="col-2">4 </div>
+		</div>
+
+</div></div>
+
+
+
+<!---mint--->
+
+<div class="row" data-titulo = "Mint" style="margin-right: 5%; margin-left: 5%; display: none;">
+	<div class="col-12" style="background-color: #e4e4e4; padding:15px">
+		<div class="row" style="padding: 10px;">
+			<div class="col-2"> <b> Nombre</b>  </div>
+			<div class="col-2"> <b>Cierre </b></div>
+			<div class="col-2"><b>Apertura</b> </div>
+			<div class="col-2"><b>Máximo </b></div>
+			<div class="col-2"><b>Mínimo </b></div>
+			<div class="col-2"><b>Variacion </b></div>
+		</div>
+		<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
+			<div class="col-2">  Apple  </div>
+			<div class="col-2"> 10.4 </div>
+			<div class="col-2">23 </div>
+			<div class="col-2">10 </div>
+			<div class="col-2">5 </div>
+			<div class="col-2">4 </div>
+		</div>
+
+</div></div>
+
+
+<!--Buy-->
+<div class="row" data-titulo = "Buy" style="margin-right: 5%; margin-left: 5%; display: none;">
+	<div class="col-12" style="background-color: #e4e4e4; padding:15px">
+		<div class="row" style="padding: 10px;">
+			<div class="col-2"> <b> Nombre</b>  </div>
+			<div class="col-2"> <b>Cierre </b></div>
+			<div class="col-2"><b>Apertura</b> </div>
+			<div class="col-2"><b>Máximo </b></div>
+			<div class="col-2"><b>Mínimo </b></div>
+			<div class="col-2"><b>Variacion </b></div>
+		</div>
+		<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
+			<div class="col-2">  Apple  </div>
+			<div class="col-2"> 10.4 </div>
+			<div class="col-2">23 </div>
+			<div class="col-2">10 </div>
+			<div class="col-2">5 </div>
+			<div class="col-2">4 </div>
+		</div>
+
+</div></div>
+
+<!--Opciones-->
+<div class="row" data-titulo = "Opciones" style="margin-right: 5%; margin-left: 5%; display: none;">
+
+	<div class="col-12" style="background-color: #e4e4e4; padding:15px">
+<h3>Create</h3><br>
+		<div class="row" style="padding: 10px;">
+			<div class="col-2"> <b> Nombre</b>  </div>
+			<div class="col-2"> <b>Cierre </b></div>
+			<div class="col-2"><b>Apertura</b> </div>
+			<div class="col-2"><b>Máximo </b></div>
+			<div class="col-2"><b>Mínimo </b></div>
+			<div class="col-2"><b>Variacion </b></div>
+		</div>
+		<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
+			<div class="col-2">  Apple  </div>
+			<div class="col-2"> 10.4 </div>
+			<div class="col-2">23 </div>
+			<div class="col-2">10 </div>
+			<div class="col-2">5 </div>
+			<div class="col-2">4 </div>
+		</div>
+				<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
+			<div class="col-2">  Tesla  </div>
+			<div class="col-2"> 10.4 </div>
+			<div class="col-2">23 </div>
+			<div class="col-2">10 </div>
+			<div class="col-2">5 </div>
+			<div class="col-2">4 </div>
+		</div>
+				<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
+			<div class="col-2">  Microsoft  </div>
+			<div class="col-2"> 10.4 </div>
+			<div class="col-2">23 </div>
+			<div class="col-2">10 </div>
+			<div class="col-2">5 </div>
+			<div class="col-2">4 </div>
+		</div>
+				<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
+			<div class="col-2">  FEMSA  </div>
+			<div class="col-2"> 10.4 </div>
+			<div class="col-2">23 </div>
+			<div class="col-2">10 </div>
+			<div class="col-2">5 </div>
+			<div class="col-2">4 </div>
+		</div>
+						<div class="titulos row" onclick = "open_my_modal(this)" style="padding: 10px; font-size: 90%;">
+			<div class="col-2">  FUNO  </div>
+			<div class="col-2"> 10.4 </div>
+			<div class="col-2">23 </div>
+			<div class="col-2">10 </div>
+			<div class="col-2">5 </div>
+			<div class="col-2">4 </div>
+		</div>
+
+<h3>Short</h3><br>
+<h3>Long</h3><br>
+
+</div>
+
+
+</div>
+
+
+
+
+<!-- Modal 0-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+		<div class="card">
+			<div class="row" style="margin: 0px">
+				<div onclick = "change_title(this)" data-c="pesta" class="titulos col-6" style="margin: 0px; padding: 10px; text-align: center;">Mint</div>
+				<div onclick = "change_title(this)" data-c="pesta" class="pesta titulos col-6" style="margin: 0px; padding: 10px; text-align: center;">Burn</div>
+				<div onclick = "change_title(this)" data-c="pesta" class="pesta titulos col-6" style="margin: 0px; padding: 10px; text-align: center;">Buy</div>
+				<div onclick = "change_title(this)" data-c="pesta" class="pesta titulos col-6" style="margin: 0px; padding: 10px; text-align: center;">Sell</div>
+
+			</div>
+				
+
+			  <div class="card-body">
+			    <h5 class="card-title">Mint</h5>
+			    <form method="post">
+ 	
+  <div class="mb-3">
+  	
+    <label for="Cantidad" class="form-label">Cantidad</label>
+    <input name="Cantidad" type="number" class="form-control" id="Cantidad" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="Precio" class="form-label">Precio</label>
+    <input  name="Precio" type="number" class="form-control" id="Precio">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  {% csrf_token %}
+</form>
+			  </div>
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 1 -->
+
+<div class="modal fade" id="Modal_option" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+		<div class="card">
+			  <div class="card-body">
+			    <h5 class="card-title">Mint</h5>
+			    <form method="post">
+ 	
+  <div class="mb-3">
+  	
+    <label for="cantidad_option" class="form-label">Cantidad</label>
+    <input name="cantidad" type="number" class="form-control" id="cantidad_option" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+  	
+    <label for="precio_option" class="form-label">Precio</label>
+    <input name="precio" type="number" class="form-control" id="precio_option" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="fecha" class="form-label">Fecha</label>
+    <input  name="fecha" type="date" class="form-control" id="fecha">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  {% csrf_token %}
+</form>
+			  </div>
+			</div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript">
+	var company = "";
+	var action = "Mint";
+
+
+	function change_title(o)
+	{
+		document.querySelector(".card-title").innerHTML =  o.innerHTML + company;
+		action = o.innerHTML;
+		var pesta = document.querySelectorAll("div[data-c='pesta']");
+		pesta.forEach(V => V.style.backgroundColor = "#ffffff");
+		o.style.backgroundColor = "#dddddd";
+
+	}
+	function change_titulo(o)
+	{
+		var pes = document.querySelectorAll("div[data-titulo]");
+		pes.forEach(V => V.style.display = "none");
+		new_pes = document.querySelector("div[data-titulo ='" + o.children[0].innerHTML + "']");
+		new_pes.style.display = "flex";
+
+
+	}
+
+	function open_my_modal(o)
+	{
+		company = o.children[0].innerHTML;
+		$('#myModal').modal('show');
+		document.querySelector(".card-title").innerHTML = action + company;
+		
+		
+	}
+</script>
+</html>
